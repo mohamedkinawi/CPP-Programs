@@ -2,7 +2,10 @@
 #include<fstream>
 using namespace std;
 
-const int square = 40;
+// grid dimension is 40 by 40 cells
+const int square = 40; 
+
+// function declarations/prototypes
 void display(char a[][square][2], int layertodisplay);
 void generation(char a[][square][2], int testlayer, int copytolayer);
 char test(const char a[][square][2], int totesty, int totestr, int totestlayer, char element);
@@ -10,18 +13,21 @@ char test(const char a[][square][2], int totesty, int totestr, int totestlayer, 
 
 
 int main() {
-	char world[square][square][2];
 
+	// 3-d array. think of it as 2 square 2-d arrays stacked above each other.
+	char world[square][square][2];
+	
 	ifstream start;
-	start.open(R"(D:\MicrosoftVisualStudio2019\Projects\ProblemSolvingWithC++\CH7 PROBLEMS\programming_projects_Q13_starting_configuration.txt)");
+	start.open(R"(D:\folder1\folder2\starting_configuration.txt)");
 	if (start.fail()) {
 		cout << "failed to open the starting configuration file";
 		exit(1);
 	}
-	for(int y=0;y< square;y++)
+	for(int y=0;y< square;y++){
 		for (int r = 0; r < square; r++) {
 			start >> world[y][r][1];
 		}
+	}
 	start.close();
 
 	int count = 1;
@@ -81,3 +87,8 @@ char test(const char a[][square][2], int totesty, int totestr, int totestlayer, 
 	}
 
 }
+
+/*
+Compile in command line g++ main.cpp main.exe
+Run main.exe
+*/
