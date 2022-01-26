@@ -48,15 +48,6 @@ a singleton pattern to allow instantiating only one object , since we can seed o
 */
 
 /*
-OR we could use static global variables in the implementation file to store the values
-*/
-
-/*
 OR we could use static local variables inside the function implementations but we have to choose which function contains them because this is the only function
 that has access to these variables.
-*/
-
-/*
-In this implementation, no numbers are stored anywhere, i chose to make the numbers as inputs to functions, so everytime a random number is desired, the client must
-always give the bounds as inputs to the functions
 */
