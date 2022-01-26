@@ -1,3 +1,4 @@
+// an example program to see how the "random.h" library works
 // compile this file in command line "g++ -c main.cpp"
 // link and produce executable "g++ random.o main.o -o executableName"
 
