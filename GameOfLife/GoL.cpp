@@ -13,7 +13,7 @@ namespace kinawi{
 		ifstream in;
 		in.open(absolute_path_filename);
 		if(in.fail()){
-			throw("Failed to open the file!");
+			throw(string("Failed to open the file!"));
 		}
 		bool start_determined = false;
 		int start_shift;
