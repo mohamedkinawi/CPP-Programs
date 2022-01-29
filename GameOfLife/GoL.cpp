@@ -32,7 +32,7 @@ namespace kinawi{
 		}
 		nthgeneration++;
 	}
-	ostream& operator<<(ostream& out , kinawi::GOL& gol){
+	ostream& operator<<(ostream& out , GOL& gol){
 		for(unsigned int line=0;line<gol.height;line++){
 			for(unsigned int c=0;c<gol.width;c++){
 				if(gol.stacked_grids[gol.nthgeneration%2][line][c]==0)
