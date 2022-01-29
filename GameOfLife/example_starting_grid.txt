@@ -1,0 +1,43 @@
+Any line that contains a '!' symbol is a comment and is ignored. The '!' symbol overrules the '$' symbol.
+The grid height and width are determined by the rectangle that connects the '$' symbols! (upper left corner and right lower corner)
+You can use a mix of tabs and spaces !
+!
+This starting grid is Gosper's Glider Gun. The "gun" at the top will repeatedly fire off gliders that head southwest!
+$ 	 
+                  
+
+		    	 	 	 X
+					 X X
+					  X X       X
+			     XX 	  X  X      XX
+		             XX           X X  XX    XX
+		 		 	 X X   XX    XXX       XX
+				    	 X     XX    XX        XX
+						    XX
+						    X	        
+						
+
+					
+
+
+		
+
+
+
+
+									
+	
+	
+
+	
+
+
+
+               
+
+
+
+		
+					
+								  $
+
