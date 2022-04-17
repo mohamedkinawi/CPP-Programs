@@ -1,3 +1,7 @@
+/*
+This code can be easily adapted to take a list of strings and give all combinations for that list.
+*/
+
 #include<iostream>
 #include<string>
 #include<vector>
