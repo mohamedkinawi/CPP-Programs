@@ -7,7 +7,7 @@ using namespace std;
 class String{
 	public:
 		String(); 		//default constructor
-		String(const char q[]); IMPORTANT:::: the const modifier is a must, without it on VS, the program won't run. Running from the command line using g++ produces warnings
+		String(const char q[]); //IMPORTANT:::: the const modifier is a must, without it on VS, the program won't run. Running from the command line using g++ produces warnings
 		// big 3
 		String(const String& obj); 		//copy constructor
 		String& operator = (const String& rhs); //returns calling object for a chain of assignments
