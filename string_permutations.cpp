@@ -1,41 +1,59 @@
+/*
+CAN BE EASILY ADAPTED TO GET PERMUTATIONS OF ALL ITEMS IN A LIST (VECTOR/ARRAY) INSTEAD OF A STRING (EXAMPLE IS BACKTRACKING_ANAGRAMS)
+*/
+
 #include<iostream>
 #include<string>
+#include<vector>
 using namespace std;
 
-string swap(const string& s, int i1, int i2)
-{
-	string n = s;
-	char temp = n[i1];
-	n[i1] = n[i2];
-	n[i2] = temp;
-	return n;
-}
+void permute(string s, vector<string>& permutations);
+void permuteHelper(string& characters_left, string& permutation, vector<string>& permutations);
 
-void permute(const string& s, const int AT)
-{
-	if(AT==s.length()-1)
-	{
-		cout<<s[AT]<<endl;
-	}
-	else
-	{
-		for(int i = AT ; i < s.length() ; i++)
-		{
-			if(i!=AT)
-				for(int p=0;p<AT;p++)
-					cout<<s[p];
-			string n = swap(s,AT,i);
-			cout<<n[AT];
-			permute(n,AT+1);
-		}
-	}
-}
+ostream& operator<<(ostream& out, const vector<string>& v);
 
 int main()
 {
 	string input;
 	cout<<"Enter a string: ";
 	cin>>input;
-	permute(input,0);
+	vector<string> permutations;
+	permute(input,permutations);
+	cout<<permutations;
 	return 0;
+}
+
+void permute(string characters_left, vector<string>& permutations)
+{
+	string permutation("");
+	permuteHelper(characters_left, permutation, permutations);
+}
+
+void permuteHelper(string& characters_left, string& permutation, vector<string>& permutations)
+{
+	if(characters_left.length())
+	{
+		for(int i=0;i<characters_left.length();i++)
+		{
+			char next = characters_left[i];
+			characters_left.erase(i,1);
+			permutation.push_back(next);
+			permuteHelper(characters_left,permutation,permutations);
+			characters_left.insert(i,1,next);
+			permutation.pop_back();
+		}
+	}
+	else
+	{
+		permutations.push_back(permutation);
+	}
+}
+
+ostream& operator<<(ostream& out, const vector<string>& v)
+{
+	for(int i=0;i<v.size();i++)
+	{
+		out<<v[i]<<endl;
+	}
+	return out;
 }
