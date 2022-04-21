@@ -15,8 +15,8 @@ ostream& operator<<(ostream& out, const vector<string>& v);
 int main()
 {
 	string input;
-	cout<<"Enter a string: ";
-	cin>>input;
+	cout<<"Enter a phrase: ";
+	getline(cin,input);
 	vector<string> permutations;
 	permute(input,permutations);
 	cout<<permutations;
@@ -25,6 +25,7 @@ int main()
 
 void permute(string characters_left, vector<string>& permutations)
 {
+	cout<<"Calculating...\n";
 	string permutation("");
 	permuteHelper(characters_left, permutation, permutations);
 }
