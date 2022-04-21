@@ -1,5 +1,6 @@
 /*
-CAN BE EASILY ADAPTED TO GET PERMUTATIONS OF ALL ITEMS IN A LIST (VECTOR/ARRAY) INSTEAD OF A STRING (EXAMPLE IS BACKTRACKING_ANAGRAMS)
+- RETURNS PERMUTATIONS OF A STRING IN A VECTOR FORM.
+- CAN BE EASILY ADAPTED TO GET PERMUTATIONS OF ITEMS IN A LIST (VECTOR/ARRAY) INSTEAD OF A STRING (EXAMPLE IS BACKTRACKING_ANAGRAMS)
 */
 
 #include<iostream>
@@ -9,7 +10,6 @@ using namespace std;
 
 void permute(string s, vector<string>& permutations);
 void permuteHelper(string& characters_left, string& permutation, vector<string>& permutations);
-
 ostream& operator<<(ostream& out, const vector<string>& v);
 
 int main()
