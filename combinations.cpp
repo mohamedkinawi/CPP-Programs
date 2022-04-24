@@ -8,7 +8,7 @@ This code can be easily adapted to take a list of strings and give all combinati
 #include<cctype>
 using namespace std;
 
-void combinationsHelper(string combination, int next_element, vector<string>& combinations, const string& s, const int& number_of_elements)
+void combinationsHelper(string& combination, int next_element, vector<string>& combinations, const string& s, const int& number_of_elements)
 {
 	if(combination.length()==number_of_elements)
 	{
@@ -18,7 +18,9 @@ void combinationsHelper(string combination, int next_element, vector<string>& co
 	{
 		for(int i=next_element;i<s.length();i++)
 		{
-			combinationsHelper(combination+s[i],i+1,combinations,s,number_of_elements);
+			combination.push_back(s[i]);
+			combinationsHelper(combination,i+1,combinations,s,number_of_elements);
+			combination.pop_back();
 		}
 	}
 }
@@ -26,10 +28,8 @@ void combinationsHelper(string combination, int next_element, vector<string>& co
 vector<string> combinations(const string& s,const int& number_of_elements)
 {
 	vector<string> combinations;
-	for(int i=0;i<s.length();i++)
-	{
-		combinationsHelper(s.substr(i,1),i+1,combinations,s,number_of_elements);
-	}
+	string combination("");
+	combinationsHelper(combination,0,combinations,s,number_of_elements);
 	return combinations;
 }
 
